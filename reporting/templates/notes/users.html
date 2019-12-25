@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <html>
+
+    {% load static %}
+        <head>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'notes/styles.css' %}">                  
+
+        </head>
+ 
+        <body>
+            
+            
+            <div class="container">  
+          <h2>Employees</h2>
+          
+    
+        <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                {% for user in users.all %}
+                  <tr class="table-light">
+
+                       <td>{{user.fname}}</td>
+                       <td>{{user.lname}}</td>
+                  </tr>
+                {% endfor %}
+
+                  </tbody>
+              </table>    
+            </div>
+        </body>
+    </html>
